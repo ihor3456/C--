@@ -1,20 +1,123 @@
-﻿// 5.1.3.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
-
 #include <iostream>
+#include <string>
+
+using namespace std;
+
+class Square
+{
+public:
+	Square(double side);
+	void set_side(double side);
+	double get_side();
+	double get_area();
+	void print();
+private:
+	double side;
+	double area;
+};
+Square::Square(double side)
+{
+	if (side >= 0)
+	{
+		this->side = side;
+		this->area = side * side;
+	}
+	else
+	{
+		this->side = 0;
+		this->area = 0;
+	}
+}
+void Square::set_side(double side)
+{
+	if (side >= 0)
+	{
+		this->side = side;
+		this->area = side * side;
+	}
+}
+void Square::print()
+{
+	cout << "Square: side = " << this->side << " area = " << this->area << endl;
+}
+
+class AdHocSquare
+{
+public:
+	AdHocSquare(double side);
+	void set_side(double side);
+	double get_area();
+private:
+	double side;
+};
+class LazySquare
+{
+public:
+	LazySquare(double side);
+	void set_side(double side);
+	double get_area();
+private:
+	double side;
+	double area;
+	bool side_changed;
+};
+AdHocSquare::AdHocSquare(double side)
+{
+	if (side >= 0)
+		this->side = side;
+	else
+		this->side = 0;
+}
+void AdHocSquare::set_side(double side)
+{
+	if (side >= 0)
+	{
+		this->side = side;
+	}
+}
+double AdHocSquare::get_area()
+{
+	return this->side * this->side;
+}
+LazySquare::LazySquare(double side)
+{
+	if (side >= 0)
+	{
+		this->side = side;
+		this->area = side * side;
+	}
+	else
+	{
+		this->side = 0;
+		this->area = 0;
+	}
+}
+void LazySquare::set_side(double side)
+{
+	if (side >= 0)
+	{
+		this->side = side;
+		this->side_changed = true;
+	}
+}
+double LazySquare::get_area()
+{
+	if (this->side_changed)
+	{
+		return side * side;
+	}
+	else
+	{
+		return this->area;
+	}
+}
+
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	
+	// thisd part
+	// change AdHocSquare & LazySquare
+		
+	return 0;
 }
-
-// Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
-// Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
-
-// Советы по началу работы 
-//   1. В окне обозревателя решений можно добавлять файлы и управлять ими.
-//   2. В окне Team Explorer можно подключиться к системе управления версиями.
-//   3. В окне "Выходные данные" можно просматривать выходные данные сборки и другие сообщения.
-//   4. В окне "Список ошибок" можно просматривать ошибки.
-//   5. Последовательно выберите пункты меню "Проект" > "Добавить новый элемент", чтобы создать файлы кода, или "Проект" > "Добавить существующий элемент", чтобы добавить в проект существующие файлы кода.
-//   6. Чтобы снова открыть этот проект позже, выберите пункты меню "Файл" > "Открыть" > "Проект" и выберите SLN-файл.
