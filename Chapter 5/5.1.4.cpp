@@ -1,4 +1,4 @@
-// 5.1.4.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+// 5.1.4.cpp : пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ "main". пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
 //
 
 #include <iostream>
@@ -74,7 +74,7 @@ void ShopItemOrder::print()
 int main()
 {
 
-	ShopItemOrder order("egg", 0.40, 40);
+	ShopItemOrder order("pencil", 2, 30);
 	order.print();
 	double totalPrice = order.get_total_price();
 	cout << "the total price is: " << totalPrice;
