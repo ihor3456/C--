@@ -111,13 +111,13 @@ double LazySquare::get_area()
 		return this->area;
 	}
 }
-
-
 int main()
 {
-	
-	// thisd part
-	// change AdHocSquare & LazySquare
-		
+	Square s(4);
+	s.print();
+	s.set_side(2.0);
+	s.print();
+	s.set_side(-42);
+	s.print();
 	return 0;
 }
